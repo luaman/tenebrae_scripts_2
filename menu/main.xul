@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- 
+Copyright (C) 2003 Tenebrae Team 
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<package>
+<window
+	id="main"
+	title="MainMenu"
+	orient="horizontal">
+	<image src="menus/col1" orient="horizontal">
+		<box width="5%"/>
+		<vbox>
+			<vbox height="60" pack="center">
+				<image src="menus/banner" width="268" height="54"/>
+			</vbox>
+			<!-- begining of the real stuff -->
+			<image src="menus/col3" orient="horizontal">  
+				<vbox width="50%">
+					<vbox height="10%"/>
+					<vbox pack="center">
+						<image src="menus/video" width="180" height="128"/>
+					</vbox>
+				</vbox>
+				<vbox pack="center">
+					<box height="1%"/>
+					<box>
+						<!-- main -->
+						<vbox>
+							<button name="splayer"	label="Single Player"	command="menu_singleplayer"	image="menus/col2"/>
+							<box height="1%"/>
+							<button name="mplayer"	label="Multy Player"	command="menu_multiplayer"	image="menus/col2"/>
+							<box height="1%"/>
+							<button name="options"	label="Game Options"	command="openwindow options; play misc/menu1.wav"	image="menus/col2"/>
+							<box height="1%"/>
+							<button name="help"	label="Documentation"	command="help"	image="menus/col2"/>
+							<box height="1%"/>
+							<button name="quit"	label="Exit Tenebrae"	command="menu_quit"	image="menus/col2"/>
+						</vbox>
+					</box>
+					<box height="1%"/>
+				</vbox>
+				<box width="1%"/>
+			</image>
+			<!-- end of the real stuff -->
+			<box height="5%"/>
+		</vbox>
+		<box width="5%"/>
+	</image>
+</window>
+</package>

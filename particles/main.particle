@@ -1,0 +1,444 @@
+// Tenebrae main.particle file, these are all the default particle effects for Quake.
+
+// ###################################################################################
+// Decal defination bellow this line
+// ###################################################################################
+
+
+//nice burnmark for sparks
+//who: willi 
+particle glowdecal {
+	lifetime 3 4
+	startcolor 1.0 1.0 1.0 1.0 1.0 1.0
+	endcolor 1.0 1.0 1.0 1.0 1.0 1.0
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 8 9
+	orientation surface
+	map "textures/decals/particle_burn01.tga"
+}
+
+//nice burnmark for explosions
+//who: willi 
+particle explodecal {
+	lifetime 10 11
+	startcolor 0.5 0.5 0.5 0.5 0.5 0.5
+	endcolor 0.5 0.5 0.5 0.5 0.5 0.5
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 30 35
+	orientation surface
+	map "textures/decals/explo_burn01.tga"
+}
+
+//lave burnmark
+//who: willi 
+particle lavadecal {
+	lifetime 10 11
+	startcolor 0.5 0.5 0.5 0.5 0.5 0.5
+	endcolor 0.0 0.0 0.0 0.0 0.0 0.0
+	blendfunc GL_ONE GL_ONE
+	size 50 60
+	orientation surface
+	map "textures/decals/lavaburn.tga"
+}
+
+//some decal for the lighting particles
+//who: willi 
+particle lightningdecal {
+	lifetime 1.5 2
+	startcolor 0.5 0.8 1.0 0.6 0.9 1.0
+	endcolor 0.3 0.6 1.0 0.4 0.7 1.0
+	blendfunc GL_ONE GL_ONE
+	size 10 12
+	orientation surface
+	map "textures/decals/glow2.tga"
+}
+
+//a blood decal
+//who: willi 
+particle blooddecal1 {
+	lifetime 25 25
+	startcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	endcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 30 32
+	orientation surface
+	map "textures/decals/blood_splat01.tga"
+}
+
+//guess what another blood decal
+//who: willi 
+particle blooddecal2 {
+	lifetime 25 25
+	startcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	endcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 30 32
+	orientation surface
+	map "textures/decals/blood_splat02.tga"
+}
+
+//uhmmm one more blood decal 
+//who: willi 
+particle blooddecal3 {
+	lifetime 15 15
+	startcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	endcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 35 37
+	orientation surface
+	map "textures/decals/blood_splat03.tga"
+}
+
+
+// ###################################################################################
+// End of decal defination
+// ###################################################################################
+
+// ###################################################################################
+// Particle system defination bellow this line
+// ###################################################################################
+
+//fireball explosion
+//who: willi 
+particle pt_explode {
+	emitter box -32 -32 -32 32 32 32
+	velocity -192 -192 -192 192 192 192
+	rotation 0 0
+	bounces 3
+	orientation vel 0.03
+	lifetime 1.5 2
+	startcolor 0.5 0.25 0.0 0.5 0.25 0.0
+	endcolor 0.0 0.0 0.0 0.0 0.0 0.0
+	blendfunc GL_ONE GL_ONE
+	gravity 0 0 -200
+	size 4 6
+	map "textures/particles/glow.tga"
+}
+
+//fireball explosion on rocket or grenade impact
+//who: willi 
+particle pt_explosion1 {
+	emitter box -32 -32 -32 32 32 32
+	velocity -192 -192 -192 192 192 192
+	rotation 0 0
+	bounces 3
+	orientation vel 0.03
+	lifetime 1.5 2
+	startcolor 0.5 0.25 0.0 0.5 0.25 0.0
+	endcolor 0.0 0.0 0.0 0.0 0.0 0.0
+	blendfunc GL_ONE GL_ONE
+	gravity 0 0 -200
+	size 4 6
+	map "textures/particles/glow.tga"
+}
+
+//spawn smoke on rocket or grenade impact
+//who: willi 
+particle pt_explosion2 {
+	emitter box -16 -16 -16 16 16 16
+	velocity -16 -16 -16 16 16 16
+	startcolor 0.4 0.4 0.4 0.5 0.5 0.5
+	endcolor 0.2 0.2 0.2 0.3 0.3 0.3
+	lifetime 2 3
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 23 25
+	grow 25 50
+	rotation -150 150
+	gravity 0 0 6
+	//orientation vel 0.02
+	map "textures/particles/smoke.tga"
+}
+
+//teleport spawns funky flares
+//who: charles, willi 
+particle teleportsplash {
+	emitter box 0 0 0 4 4 4
+	velocity -64 -64 -64 64 64 64
+	rotation -50 50
+	lifetime 2 2.5
+	startcolor 0.9 0.9 0.9 1.0 1.0 1.0
+	endcolor 0.4 0.4 0.4 0.5 0.5 0.5
+	blendfunc GL_ONE GL_ONE
+	size 8 10
+	gravity 0 0 -240
+	map "textures/particles/flare2.tga"
+}
+
+//spawn blood when hit 1
+//who: willi 
+particle pt_hitblood1 {
+	emitter box -8 -8 -8 8 8 8
+	velocity -48 -48 -48 48 48 48
+	rotation -80 80
+	lifetime 2 3
+	startcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	endcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	orientation view
+	size 23 25
+	onhit blooddecal1
+	gravity 0 0 -250
+	map "textures/particles/blood.tga"
+}
+
+//spawn blood when hit 2
+//who: willi 
+particle pt_hitblood2 {
+	emitter box -8 -8 -8 8 8 8
+	velocity -48 -48 -48 48 48 48
+	rotation 0 0
+	lifetime 2 3
+	startcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	endcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 18 20
+	gravity 0 0 -300
+	onhit blooddecal2
+	map "textures/particles/blood2.tga"
+	orientation vel 0.0156
+}
+
+//wtf??
+//who: noone
+particle pt_entityparticles {
+
+}
+
+//wtf??
+//who: noone
+particle pt_voreexplosion1 {
+
+}
+
+//wtf??
+//who: noone
+particle pt_voreexplosion2 {
+
+}
+
+//pointfile points
+//who: charles
+particle pt_pointfile {
+
+}
+
+//sparks from weapon impact shotgun, double_shotgun, axe
+//who: willi 
+particle pt_gunshot {
+	emitter box -2 -2 -2 2 2 2
+	velocity -128 -128 -128 128 128 128
+	rotation 0 0
+	bounces 1
+	lifetime 0.25 0.5
+	startcolor 1.0 0.9 0.1 1.0 0.8 0.2
+	endcolor 0.5 0.1 0.1 0.5 0.2 0.2
+	blendfunc GL_ONE GL_ONE
+	orientation vel 0.02
+	gravity 0 0 -100
+	size 4 6
+	onhit glowdecal
+	map "textures/particles/glow.tga"
+}
+
+//rising smoke from weapon impact shotgun, double_shotgun, axe
+//who: willi 
+particle pt_gunshotsmoke {
+	emitter box -2 -2 -2 2 2 2
+	startcolor 0.7 0.8 1.0 0.8 0.9 1.0
+	endcolor 0.6 0.7 0.9 0.7 0.8 0.9
+	lifetime 2 3
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 6 8
+	grow 10 15
+	rotation -100 100
+	gravity 0 0 8
+	map "textures/particles/smoke.tga"
+}
+
+//sparks from weapon impact nailgun, chaingun
+//who: willi 
+particle pt_spike {
+	emitter box -2 -2 -2 2 2 2
+	velocity -128 -128 -128 128 128 128
+	rotation 0 0
+	bounces 1
+	lifetime 0.25 0.5
+	startcolor 1.0 0.9 0.1 1.0 0.8 0.2
+	endcolor 0.5 0.1 0.1 0.5 0.2 0.2
+	blendfunc GL_ONE GL_ONE
+	orientation vel 0.02
+	gravity 0 0 -100
+	size 4 6
+	onhit glowdecal
+	map "textures/particles/glow.tga"
+}
+
+//sparks from weapon impact lightninggun
+//who: willi
+particle pt_lightning {
+	emitter box -2 -2 -2 2 2 2
+	velocity -256 -256 -256 256 256 256
+	rotation 0 0
+	bounces 1
+	lifetime 0.25 0.3
+	startcolor 0.5 0.8 1.0 0.6 0.9 1.0
+	endcolor 0.3 0.6 1.0 0.4 0.7 1.0
+	blendfunc GL_ONE GL_ONE
+	orientation vel 0.03
+	gravity 0 0 -50
+	size 4 6
+	onhit lightningdecal
+	map "textures/particles/glow.tga"
+}
+
+//lave splash for episode one boss
+//who: willi 
+particle pt_lavasplash {
+	emitter box 8 8 8 16 16 16
+	velocity 32 32 32 64 64 64
+	rotation 200 -200
+	lifetime 5 5
+	bounces 1
+	startcolor 1.0 1.0 1.0 1.0 1.0 1.0
+	endcolor 0.5 0.5 0.5 0.5 0.5 0.5
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 110 130
+	gravity 0 0 -70
+	grow -5 -7
+	onhit lavadecal
+	map "textures/particles/lavasplash.tga"
+}
+
+//nice rocket trail
+//who: willi 
+particle pt_rockettrail {
+	emitter box -2 -2 -2 2 2 2
+	velocity -2 -2 -2 2 2 2
+	startcolor 1.0 0.3 0.0 1.0 0.6 0.1
+	endcolor 0.8 0.8 0.9 0.9 0.9 1.0
+	lifetime 2.5 3.5
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 20 25
+	grow 20 40
+	rotation -150 150
+	gravity 0 0 12
+	map "textures/particles/smoke.tga"
+}
+
+//another smoke trail
+//who: willi 
+particle pt_smoketrail {
+	emitter box -2 -2 -2 2 2 2
+	velocity -2 -2 -2 2 2 2
+	startcolor 1.0 1.0 1.0 1.0 1.0 1.0
+	endcolor 0.8 0.8 0.9 0.9 0.9 1.0
+	lifetime 2.5 3.5
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 20 25
+	grow 20 40
+	rotation -150 150
+	gravity 0 0 12
+	map "textures/particles/smoke.tga"
+}
+
+//yes more blood... muahahaha
+//who: willi
+particle pt_bloodtrail {
+emitter box -32 -32 -32 32 32 32
+	velocity -64 -64 -64 64 64 64
+	rotation 0 0
+	lifetime 0.35 0.50
+	startcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	endcolor 1.0 1.0 1.0 0.8 0.8 0.8
+	blendfunc GL_ZERO GL_ONE_MINUS_SRC_COLOR
+	size 35 40
+	gravity 0 0 -300
+	grow 70 80
+	onhit blooddecal3
+	map "textures/particles/blood2.tga"
+	orientation vel 0.015
+}
+
+//orange magic particles
+//who: willi
+particle pt_hknighttrail {
+	emitter box -2 -2 -2 2 2 2
+	velocity -32 -32 -32 32 32 32
+	startcolor 0.3 0.1 0.0 0.3 0.1 0.0
+	endcolor 0.2 0.1 0.0 0.2 0.1 0.0
+	lifetime 0.5 0.6
+	blendfunc GL_ONE GL_ONE
+	size 7 9
+	grow -3 -4
+	rotation -150 150
+	gravity 0 0 -200
+	map "textures/particles/glow1.tga"
+}
+
+//pinky magic particles
+//who: willi
+particle pt_voretrail {
+	emitter box -2 -2 -2 2 2 2
+	velocity -32 -32 -32 32 32 32
+	startcolor 0.3 0.0 0.2 0.3 0.0 0.2
+	endcolor 0.2 0.0 0.2 0.2 0.0 0.2
+	lifetime 1.0 1.25
+	blendfunc GL_ONE GL_ONE
+	size 7 9
+	grow -3 -4
+	rotation -150 150
+	gravity 0 0 50
+	map "textures/particles/flare1.tga"
+}
+
+//green slime particles
+//who: willi
+particle pt_wizzardtrail {
+	emitter box -2 -2 -2 2 2 2
+	velocity -32 -32 -32 32 32 32
+	startcolor 1.0 1.0 1.0 1.0 1.0 1.0
+	endcolor 0.0 0.0 0.0 0.0 0.0 0.0
+	lifetime 2.5 3.5
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 35 37
+	grow 20 25
+	rotation -150 150
+	gravity 0 0 -300
+	map "textures/particles/slime.tga"
+}
+
+//just some more smoke
+//who: willi
+particle pt_smoke {
+	emitter box -2 -2 -2 2 2 2
+	velocity -2 -2 -2 2 2 2
+	startcolor 1.0 1.0 1.0 1.0 1.0 1.0
+	endcolor 0.8 0.8 0.9 0.9 0.9 1.0
+	lifetime 2.5 3.5
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 25 30
+	grow 20 40
+	rotation -150 150
+	gravity 0 0 12
+	map "textures/particles/smoke.tga"
+}
+
+//spawned if no other particle effect is done for it and it uses the "default" quake particle code
+//who: willi
+particle pt_genericsmoke {
+	emitter box -16 -16 -16 16 16 16
+	startcolor 0.7 0.8 1.0 0.8 0.9 1.0
+	endcolor 0.6 0.7 0.9 0.7 0.8 0.9
+	lifetime 2 2.5
+	blendfunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+	size 7 8
+	grow 10 15
+	rotation -100 100
+	gravity 0 0 8
+	map "textures/particles/smoke.tga"
+}
+
+
+// ###################################################################################
+// End of particle system defination
+// ###################################################################################

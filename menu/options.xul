@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- 
+Copyright (C) 2003 Tenebrae Team 
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<package>
+<window
+	id="options"
+	title="Options"
+	orient="horizontal">
+	<image src="menus/col1" orient="horizontal">
+		<box width="5%"/>
+		<vbox>
+			<vbox height="60" pack="center">
+				<image src="menus/banner" width="268" height="54"/>
+			</vbox>
+			<!-- begining of the real stuff -->
+			<image src="menus/col3" orient="horizontal">  
+				<box width="1%"/>
+				<vbox pack="center">
+					<box height="1%"/>
+					<vbox>
+						<button name="keys"           label="  Customize Controls" command="menu_key"/>
+						<button name="console"        label="       Go to Console" command="menu_console"/>
+						<button name="video"          label="       Video Options" command="menu_video"/>
+						<box><label                   value="         Screen Size"/><slider name="screen" id="viewsize"/></box>
+						<box><label                   value="          Brightness"/><slider name="brightness" id="gamma"/></box>
+						<box><label                   value="         Mouse Speed"/><slider name="mouse" id="sensitivity"/></box>
+						<box><label                   value="           CD Volume"/><slider name="cdvol" id="bgmvolume"/></box>
+						<box><label                   value="        Sound Volume"/><slider name="soundvol" id="volume"/></box>
+						<box><label                   value="          Always Run"/><slider name="alwaysrun" id="cl_forwardspeed"/></box>
+						<checkbox name="invertmouse"  label="        Invert Mouse" id="m_pitch"/>
+						<checkbox name="lookspring"   label="          Lookspring" id="lookspring"/>
+						<checkbox name="lookstrafe"   label="          Lookstrafe" id="lookstrafe"/>
+						<checkbox name="usemouse"     label="           Use Mouse" id="_windowed_mouse"/>
+						<checkbox name="showfps"      label="         Display FPS" id="sh_fps"/>
+						<checkbox name="chase_active" label="        Third Person" id="chase_active"/>
+						<checkbox name="Glares"       label="              Glares" id="sh_glares"/>
+						<checkbox name="useprofile"   label="        Load Profile" id="useprofile"/>
+					</vbox>
+					<box height="1%"/>
+				</vbox>
+				<box width="1%"/>
+			</image>
+			<!-- end of the real stuff -->
+			<box height="5%"/>
+		</vbox>
+		<box width="5%"/>
+	</image>
+</window>
+</package>

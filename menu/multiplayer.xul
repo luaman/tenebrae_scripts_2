@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!-- 
+Copyright (C) 2003 Tenebrae Team 
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+<package>
+<window
+	id="multiplayer"
+	title="Multiplayer Menu"
+	orient="horizontal">
+	<image src="menus/col1" orient="horizontal">
+		<box width="5%"/>
+		<vbox>
+			<vbox height="60" pack="center">
+				<image src="menus/banner" width="268" height="54"/>
+			</vbox>
+			<!-- begining of the real stuff -->
+			<image src="menus/col3" orient="horizontal">  
+				<box width="1%"/>
+				<vbox pack="center">
+					<box height="1%"/>
+					<box>
+						<!-- main -->
+						<vbox>
+							<button name="newnet" label="Start new server" command="openwindow networknew"/>
+							<button name="joinnet" label="Join a server" command="openwindow networkjoin"/>
+							<button name="setup" label="Player Setup" command="openwindow networksetup"/>							
+						</vbox>
+					</box>
+					<box height="1%"/>
+				</vbox>
+				<box width="1%"/>
+			</image>
+			<!-- end of the real stuff -->
+			<box height="5%"/>
+		</vbox>
+		<box width="5%"/>
+	</image>	
+</window>
+<window
+	id="networknew"
+	title="Multiplayer Create Menu"
+	orient="horizontal">
+	<image src="menus/col1" orient="horizontal">
+		<box width="5%"/>
+		<vbox>
+			<vbox height="60" pack="center">
+				<image src="menus/banner" width="268" height="54"/>
+			</vbox>
+			<!-- begining of the real stuff -->
+			<image src="menus/col3" orient="horizontal">  
+				<box width="1%"/>
+				<vbox pack="center">
+					<box height="1%"/>
+					<hbox>
+						<!-- main -->
+						<vbox>						
+							<label  height="20" value="Server Name:"/>
+							<label  height="20" value="Port:"/>
+						</vbox>
+						<vbox>					
+							<edit text="Tenebrae2" height="20"  width="160" length="20" id="cl_name"/>							
+							<edit text="26000" height="20"  width="160" length="20" id="cl_name"/>						
+						</vbox>						
+					</hbox>
+					<button name="go" label="Letsu Go!" command="name $cl_name"/>
+					<box height="1%"/>
+				</vbox>
+				<box width="1%"/>
+			</image>
+			<!-- end of the real stuff -->
+			<box height="5%"/>
+		</vbox>
+		<box width="5%"/>
+	</image>	
+</window>
+<window
+	id="networkjoin"
+	title="Multiplayer Join Menu"
+	orient="horizontal">
+	<image src="menus/col1" orient="horizontal">
+		<box width="5%"/>
+		<vbox>
+			<vbox height="60" pack="center">
+				<image src="menus/banner" width="268" height="54"/>
+			</vbox>
+			<!-- begining of the real stuff -->
+			<image src="menus/col3" orient="horizontal">  
+				<box width="1%"/>
+				<vbox pack="center">
+					<box height="1%"/>
+					<hbox>
+						<!-- main -->
+						<vbox>						
+							<label height="20" value="Ip adress:"/>
+							<label height="20" value="Port:"/>
+						</vbox>
+						<vbox>					
+							<edit text="127.0.0.1" width="160" height="20" length="20" id="cl_name"/>							
+							<edit text="26000" width="160" height="20" length="20" id="cl_name"/>						
+						</vbox>						
+					</hbox>
+					<button name="go" label="Letsu Go!" command="blah"/>
+					<box height="1%"/>
+				</vbox>
+				<box width="1%"/>
+			</image>
+			<!-- end of the real stuff -->
+			<box height="5%"/>
+		</vbox>
+		<box width="5%"/>
+	</image>	
+</window>
+<window
+	id="networksetup"
+	title="Multiplayer Setup Menu"
+	orient="horizontal">
+	<image src="menus/col1" orient="horizontal">
+		<box width="5%"/>
+		<vbox>
+			<vbox height="60" pack="center">
+				<image src="menus/banner" width="268" height="54"/>
+			</vbox>
+			<!-- begining of the real stuff -->
+			<image src="menus/col3" orient="horizontal">  
+				<box width="1%"/>
+				<vbox pack="center">
+					<box height="1%"/>
+					<box>
+						<!-- main -->
+						<hbox>	
+							<label height="20" value="Player name:"/>					
+							<edit height="20" width="160" text="Dude" length="20" id="cl_name"/>
+						</hbox>
+					</box>
+					<box height="1%"/>
+				</vbox>
+				<box width="1%"/>
+			</image>
+			<!-- end of the real stuff -->
+			<box height="5%"/>
+		</vbox>
+		<box width="5%"/>
+	</image>	
+</window>
+</package>
